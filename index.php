@@ -64,7 +64,7 @@
                 
                 if(!isset($_SESSION['cart'])){
                     $_SESSION['cart'] = array();
-                    echo "Array created!!";
+                    // echo "Array created!!";
                 }
                 
                 if(isset($_POST['itemName'])){
