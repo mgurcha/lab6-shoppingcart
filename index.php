@@ -38,11 +38,12 @@
                 <div class="form-group">
                     <label for="pName">Product Name</label>
                     <input type="text" class="form-control" name="query" id="pName" placeholder="Name">
+                    Category:  
                     <select name="category">
                         <?php echo getCategoriesHTML(); ?>
                     </select>
                     <br/>
-                    Price:  
+                    Price: <br/> 
                     From: <input type="text" name="price-from" />
                     To: <input type="text" name="price-to" />
                     <br/>
