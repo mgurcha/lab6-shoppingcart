@@ -32,18 +32,18 @@ $cfg['Servers'][$i]['host'] = 'localhost';
 $cfg['Servers'][$i]['compress'] = false;
 $cfg['Servers'][$i]['AllowNoPassword'] = true;
 
-
 /**
- * second server
+ * Heroku server
  */
- //mysql://b26dde437507d2:2f51c9d0@us-cdbr-iron-east-05.cleardb.net/heroku_c89fb504cd3a0f0?reconnect=true
 $i++;
+/* Authentication type */
 $cfg['Servers'][$i]['auth_type'] = 'config';
 $cfg['Servers'][$i]['host'] = 'us-cdbr-iron-east-05.cleardb.net';
 $cfg['Servers'][$i]['compress'] = false;
-$cfg['Servers'][$i]['user'] = 'b26dde437507d2';
-$cfg['Servers'][$i]['password'] = '2f51c9d0';
+$cfg['Servers'][$i]['user'] = 'b3c2e784aa1d4e';
+$cfg['Servers'][$i]['password'] = '0bc852ae';
 $cfg['Servers'][$i]['AllowNoPassword'] = false;
+
 
 /**
  * phpMyAdmin configuration storage settings.

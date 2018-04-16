@@ -5,10 +5,12 @@ function getDatabaseConnection() {
     // $password = "wsn4life";
     // $dbname = "shopping_cart"; 
     $host = "us-cdbr-iron-east-05.cleardb.net";
-    $username = "b26dde437507d2";
-    $password = "2f51c9d0";
-    $dbname = "heroku_c89fb504cd3a0f0";
+    $username = "b3c2e784aa1d4e";
+    $password = "0bc852ae";
+    $dbname = "heroku_92684600778cf77";
     //mysql://b26dde437507d2:2f51c9d0@us-cdbr-iron-east-05.cleardb.net/heroku_c89fb504cd3a0f0?reconnect=true
+    //mine
+    // mysql://b3c2e784aa1d4e:0bc852ae@us-cdbr-iron-east-05.cleardb.net/heroku_92684600778cf77?reconnect=true
     // Create connection
     $dbConn = new PDO("mysql:host=$host;dbname=$dbname", $username, $password);
     $dbConn -> setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
