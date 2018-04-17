@@ -1,15 +1,9 @@
 <?php
 function getDatabaseConnection() {
-    // $host = "localhost";
-    // $username = "Adrian";
-    // $password = "wsn4life";
-    // $dbname = "shopping_cart"; 
     $host = "us-cdbr-iron-east-05.cleardb.net";
     $username = "b3c2e784aa1d4e";
     $password = "0bc852ae";
     $dbname = "heroku_92684600778cf77";
-    //mysql://b26dde437507d2:2f51c9d0@us-cdbr-iron-east-05.cleardb.net/heroku_c89fb504cd3a0f0?reconnect=true
-    //mine
     // mysql://b3c2e784aa1d4e:0bc852ae@us-cdbr-iron-east-05.cleardb.net/heroku_92684600778cf77?reconnect=true
     // Create connection
     $dbConn = new PDO("mysql:host=$host;dbname=$dbname", $username, $password);
@@ -17,8 +11,6 @@ function getDatabaseConnection() {
 
     return $dbConn; 
 }
-
-
 
 
 function insertItemsIntoDB($items){
@@ -38,25 +30,15 @@ function insertItemsIntoDB($items){
                 itemPrice => $itemPrice,
                 itemURL => $itemImage
                 ));
-        
-        #echo "$sql <br/>";
-        
-    
-        #echo "itemName: $itemName, itemPrice: $itemPrice <br/>";
     }
     
     
-    
-    
-    // $db->exec($sql);
 }
 
 function getMatchingItems($query, $category, $priceFrom, $priceTo, $ordering, $showImages){
     $db = getDatabaseConnection(); 
     
     $imgSQL = $showImages ? ', item.image_url' : '';
-    // $sql = "SELECT * FROM item WHERE name LIKE '%$query%' ";
-    // $sql = "SELECT * FROM item WHERE 1";
     $sql = "SELECT DISTINCT item.item_id, item.name, item.price $imgSQL FROM item INNER JOIN item_category ON item.item_id = item_category.item_id INNER JOIN category ON item_category.category_id =category.category_id  WHERE 1"; 
     if(!empty($query)){
         $sql .= " AND name LIKE '%$query%' ";
@@ -86,13 +68,6 @@ function getMatchingItems($query, $category, $priceFrom, $priceTo, $ordering, $s
     
     $items = $statement->fetchAll();
     return $items;
-    // $records = $statement->fetchAll();
-    
-    // foreach($records as $record)
-    // {
-    //     echo $record["name"] . "<br/>";
-    // }
-    
 }
 
 
@@ -125,8 +100,6 @@ function getCategoriesHTML() {
     
     return $categoriesHTML; 
 }
-
-//addCategoriesForItems(40, 49, 5); //TODO: Remove when finished
 
 
 ?>
